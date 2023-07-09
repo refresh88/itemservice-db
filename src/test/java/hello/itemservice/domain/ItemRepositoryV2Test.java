@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Transactional
 @SpringBootTest // 이게 있으면 @SpringBootApplication를 찾아서 호출함.
-class ItemRepositoryTest {
+class ItemRepositoryV2Test {
 
     @Autowired
     ItemRepository itemRepository;

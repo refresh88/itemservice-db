@@ -90,7 +90,7 @@ public class JpaItemRepositoryV3 implements ItemRepository {
         return query
                 .select(item)
                 .from(item)
-                .where(LikeItemName(itemName), maxPrice(maxPrice))
+                .where(likeItemName(itemName), maxPrice(maxPrice))
                 .fetch();
     }
 
@@ -101,7 +101,7 @@ public class JpaItemRepositoryV3 implements ItemRepository {
         return null;
     }
 
-    private BooleanExpression LikeItemName(String itemName) {
+    private BooleanExpression likeItemName(String itemName) {
         if(StringUtils.hasText(itemName)) {
             return item.itemName.like("%" + itemName + "%");
         }
